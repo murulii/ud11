@@ -10,7 +10,7 @@ pipeline {
     }
     
     environment {
-        SNAP_REPO = 'vprofile-snapshot'
+        	SNAP_REPO = 'vprofile-snapshot'
 		NEXUS_USER = 'admin'
 		NEXUS_PASS = 'Depl0y@123'
 		RELEASE_REPO = 'vprofile-release'
@@ -21,9 +21,12 @@ pipeline {
         	NEXUS_LOGIN = 'nexuslogin'
         	SONARSERVER = 'sonarserver'
         	SONARSCANNER = 'sonarscanner'
-        	registryCredential = 'ecr:eu-north-1:awscreds' // you should give ecr:region:aws crendintial
-        	appRegistry = '702141222134.dkr.ecr.eu-north-1.amazonaws.com/vprofileappimg'                   // imagename of registory /url of ecr
-        	vprofileRegistry = "https://702141222134.dkr.ecr.eu-north-1.amazonaws.com"     //url of ecr
+        	registryCredential = 'ecr:eu-north-1:awscreds' 
+	              // you should give ecr:region:aws crendintial
+        	appRegistry = '702141222134.dkr.ecr.eu-north-1.amazonaws.com/vprofileappimg'                  
+	    		// imagename of registory /url of ecr
+        	vprofileRegistry = "https://702141222134.dkr.ecr.eu-north-1.amazonaws.com"     
+	    		//url of ecr here the image will be stored
     }
 
     stages {
