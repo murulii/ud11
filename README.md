@@ -1,6 +1,6 @@
 ####muruli
 ### Prerequisites
-- JDK 1.8 or later staging 1
+- JDK 1.8 or later staging 3
 - Maven 3 or later
 - MySQL 5.6 or later
 
