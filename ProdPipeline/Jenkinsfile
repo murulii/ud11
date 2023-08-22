@@ -7,7 +7,7 @@ pipeline {
     agent any
 
     environment {
-        cluster = "productionCluster" //cluster namd and service name
+        cluster = "productionCluster"
         service = "vproappprodsvc"
     }
 
@@ -29,10 +29,4 @@ pipeline {
                 message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info available at: ${env.BUILD_URL}"
         }
     }
-}
-
-
-   
-
-
 }
