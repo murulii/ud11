@@ -110,7 +110,7 @@ pipeline {
           steps{
             script {
               docker.withRegistry( vprofileRegistry, registryCredential ) {      //url repo of ecr and to login need credintails store in that variable 
-                dockerImage.push("$BUILD_NUMBER")    //docker build number attached with latest tag like (1(buildnumber),latest(latest tag )  1, latest)
+                dockerImage.push("$BUILD_NUMBER")    //docker build num attached with latest tag like (1(buildnumber),latest(latest tag )  1, latest)
                 dockerImage.push('latest')
               }
             }
