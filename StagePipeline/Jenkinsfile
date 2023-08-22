@@ -27,6 +27,8 @@ pipeline {
 	    		// imagename of registory /url of ecr
         	vprofileRegistry = "https://702141222134.dkr.ecr.eu-north-1.amazonaws.com"     
 	    		//url of ecr here the image will be stored
+	        cluster = "mynewvprotoday"  //ecs clustername
+      	        service = "newstagesvc"   //ecs service name
     }
 
     stages {
@@ -114,8 +116,14 @@ pipeline {
             }
           }
         }
-
-
+stage('Deploy to ECS staging') {
+            steps {
+                withAWS(credentials: 'awscreds', region: 'eu-north-1') {  //login to awscli and execute below cmds
+                    sh 'aws ecs update-service --cluster ${cluster} --service ${service} --force-new-deployment'
+			//above cmd update service and force to deploy new application and delete old one
+                } 
+            }
+        }
     }
     post {
         always {
